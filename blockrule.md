@@ -58,7 +58,7 @@ POST /api/v1/interact/filter/create/<device_id>
 - các trường blockapp, blockip, blockweb sẽ được ghi đè bằng các giá trị mới.
 
 
-PUT /api/v1/interact/filter/create/<device_id>
+PUT /api/v1/interact/filter/update/<device_id>
 ```
 {
   "options": {
@@ -82,7 +82,7 @@ PUT /api/v1/interact/filter/create/<device_id>
 - Ví dụ trong trường hợp dưới đây sẽ xóa ip "123.123.123.123" khỏi danh sách chặn ip
 - Muốn xóa toàn bộ rule thì cần list rule hiện đang được áp dụng trên hệ thống (GET API)
 
-DELETE /api/v1/interact/filter/create/<device_id>
+DELETE /api/v1/interact/filter/delete/<device_id>
 ```
 {
   "options": {
