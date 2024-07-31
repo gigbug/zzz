@@ -55,7 +55,7 @@ POST /api/v1/interact/filter/create/<device_id>
 
 ## Cập nhật Block Rule
 - nếu "ipaddr" để rỗng, rule sẽ được cập nhật sẽ được áp dụng cho toàn bộ client
-- các trường blockapp, blockip, blockweb sẽ được ghi đè bằng các giá trị mới.
+- các trường blockapp, blockip, blockweb sẽ được ghi đè (giá trị t rước đó) bằng các giá trị mới.
 
 
 PUT /api/v1/interact/filter/update/<device_id>
