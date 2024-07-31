@@ -77,7 +77,7 @@ PUT /api/v1/interact/filter/update/<device_id>
 }
 ```
 
-## Delete block rules
+## Delete Block Rule
 - the values ​​in the fields: blockapp, blockip, blockweb listed will be deleted
 - For example, in the case below, it will delete ip "123.123.123.123" from the list of blocked ips
 - To delete all rules, you need the list of rules currently applied on the system (View Get Api)
