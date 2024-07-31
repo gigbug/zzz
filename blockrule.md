@@ -18,7 +18,7 @@ ví dụ kết quả trả về
         "BlockWeb": [
         "google.com"    // đang chặn web(domain) google.com
         ],
-        "IpAddr": "192.168.9.9",    // Client được áp dụng
+        "IpAddr": "192.168.122.81",    // Client được áp dụng
         "MacAddr": "",
         "RuleName": "ok",
         "Updated": 1722432928325
