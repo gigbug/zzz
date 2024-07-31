@@ -1,9 +1,10 @@
 
 
-### Kiểm tra Block Rule đang được áp dụng trên thiết bị
-/api/v1/interact/filter/query/<device_id>
+## Kiểm tra Block Rule đang được áp dụng trên thiết bị
 
-## ví dụ kết quả trả về
+GET /api/v1/interact/filter/query/<device_id>
+
+ví dụ kết quả trả về
 ```
 "Content": [
     {
@@ -25,14 +26,15 @@
 ]
 ```
 
+## Thêm Block rule
+- "ipaddr": là ip của client cần áp dụng rule này, nếu để trống thì rule sẽ áp dụng với toàn bộ client
+- "blockapp": là danh sách các APP ID mà flow cung cấp
+- "blockip": là danh sách địa chỉ Ip cần chặn
+- "blockweb": là địa chỉ web cần chặn
+- các trường blockapp, blockip, blockweb để mảng rỗng nếu không không chặn 
 
-### Thêm Block rule
-### "ipaddr": là ip của client cần áp dụng rule này, nếu để trống thì rule sẽ áp dụng với toàn bộ client
-### "blockapp": là danh sách các APP ID mà flow cung cấp
-### "blockip": là danh sách địa chỉ Ip cần chặn
-### "blockweb": là địa chỉ web cần chặn
-### các trường blockapp, blockip, blockweb để mảng rỗng nếu không không chặn 
 POST /api/v1/interact/filter/create/<device_id>
+
 ```
 {
   "options": {
@@ -50,10 +52,12 @@ POST /api/v1/interact/filter/create/<device_id>
   }
 }
 ```
-### Cập nhật Block Rule
-### nếu "ipaddr" để rỗng, rule sẽ được cập nhật sẽ được áp dụng cho toàn bộ client
-### các trường blockapp, blockip, blockweb sẽ được ghi đè bằng các giá trị mới.
-###
+
+## Cập nhật Block Rule
+- nếu "ipaddr" để rỗng, rule sẽ được cập nhật sẽ được áp dụng cho toàn bộ client
+- các trường blockapp, blockip, blockweb sẽ được ghi đè bằng các giá trị mới.
+
+
 PUT /api/v1/interact/filter/create/<device_id>
 ```
 {
@@ -73,10 +77,11 @@ PUT /api/v1/interact/filter/create/<device_id>
 }
 ```
 
-### Xóa các block rule
-### những giá trị trong các trường: blockapp, blockip, blockweb được liệt kê sẽ bị xóa 
-### Ví dụ trong trường hợp dưới đây sẽ xóa ip "123.123.123.123" khỏi danh sách chặn ip
-### Muốn xóa toàn bộ rule thì cần list rule hiện đang được áp dụng trên hệ thống (GET API)
+## Xóa các block rule
+- những giá trị trong các trường: blockapp, blockip, blockweb được liệt kê sẽ bị xóa 
+- Ví dụ trong trường hợp dưới đây sẽ xóa ip "123.123.123.123" khỏi danh sách chặn ip
+- Muốn xóa toàn bộ rule thì cần list rule hiện đang được áp dụng trên hệ thống (GET API)
+
 DELETE /api/v1/interact/filter/create/<device_id>
 ```
 {
